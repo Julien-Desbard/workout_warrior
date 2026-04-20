@@ -47,6 +47,11 @@ Si un point est ambigu, demander confirmation **avant** de commencer.
 - Pas de gestion d'erreur pour des cas qui ne peuvent pas se produire
 - Pas de commentaires sur du code auto-explicite
 
+### Strings et apostrophes françaises
+
+- **Toujours utiliser des double quotes `"..."` pour les strings JS/TS contenant du texte français.** Les guillemets simples `'...'` entrent en conflit avec les apostrophes typographiques françaises (`l'`, `d'`, `j'`, etc.) qui peuvent être produites en U+2019 au lieu de U+0027, causant une erreur de parsing `Expected ',', got 'ident'`.
+- **Dans le texte JSX (entre balises), toujours échapper les apostrophes avec `&apos;`.** Écrire `l&apos;exemple` et non `l'exemple` dans le JSX pour éviter les warnings de parsing et les comportements inattendus.
+
 ### Suivi du dev
 
 - en mode plan, penser à bien morceler le développement en petite étapes, afin de pouvoir les commit au fur et à mesure
